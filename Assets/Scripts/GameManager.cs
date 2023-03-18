@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     private float time;
 
     //Click Value Variables
+    public Text valueText;
     public int clickValue;
 
     //Score Variables
@@ -34,11 +35,12 @@ public class GameManager : MonoBehaviour
         if (time <= 0f)
         {
             time = maxTime;
+            score = 0;
+            UpdateScoreText();
         }
 
-        float roundTime = Mathf.Round(time * 10f) / 10f;
-
-        timeText.text = "Time: " + roundTime.ToString();
+        float intTime = Mathf.Ceil(time);
+        timeText.text = "Time: " + intTime.ToString();
     }
 
     public void Score()
@@ -50,5 +52,10 @@ public class GameManager : MonoBehaviour
     public void UpdateScoreText()
     {
         scoreText.text = "Score: " + score.ToString();
+    }
+
+    public void UpdateValueText()
+    {
+        valueText.text = "+" + clickValue;
     }
 }
