@@ -133,6 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 122044989}
   - component: {fileID: 122044988}
+  - component: {fileID: 122044990}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -152,11 +153,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5ce4b38a82931b4787f9858950520e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxTime: 10
   timeText: {fileID: 678485205}
+  maxTime: 10
   clickValue: 1
-  score: 0
   scoreText: {fileID: 366666431}
+  score: 0
 --- !u!4 &122044989
 Transform:
   m_ObjectHideFlags: 0
@@ -171,6 +172,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &122044990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 122044987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e419e79db2423c448ea623770fab7cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &301875086
 GameObject:
   m_ObjectHideFlags: 0
@@ -439,7 +452,7 @@ MonoBehaviour:
   m_Text: '+10 Per Click
 
 
-    Cost: X'
+    Cost: 100'
 --- !u!222 &823555182
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -758,7 +771,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1137819868}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 122044990}
+        m_TargetAssemblyTypeName: ScoreSystem, Assembly-CSharp
+        m_MethodName: IncreaseClickValueBy10
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 100
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1137819868
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -870,7 +895,7 @@ MonoBehaviour:
   m_Text: '+1 Per Click
 
 
-    Cost: X'
+    Cost: 10'
 --- !u!222 &1362002714
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -952,7 +977,7 @@ MonoBehaviour:
   m_Text: '+100 Per Click
 
 
-    Cost: X'
+    Cost: 1000'
 --- !u!222 &1388768696
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1144,7 +1169,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1496229971}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 122044990}
+        m_TargetAssemblyTypeName: ScoreSystem, Assembly-CSharp
+        m_MethodName: IncreaseClickValueBy100
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1000
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1496229971
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1437,7 +1474,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2139884278}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 122044990}
+        m_TargetAssemblyTypeName: ScoreSystem, Assembly-CSharp
+        m_MethodName: IncreaseClickValueBy1
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 10
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2139884278
 MonoBehaviour:
   m_ObjectHideFlags: 0

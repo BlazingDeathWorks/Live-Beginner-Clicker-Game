@@ -2,22 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(GameManager))]
 public class ScoreSystem : MonoBehaviour
 {
     private GameManager gameManager;
 
     private void Awake()
     {
-        gameManager = GameObject.FindObjectOfType<GameManager>();
+        gameManager = GetComponent<GameManager>();
     }
+
     public void IncreaseClickValueBy1(int cost)
     {
         IncreaseClickValue(1, cost);
     }
+
     public void IncreaseClickValueBy10(int cost)
     {
         IncreaseClickValue(10, cost);
     }
+
     public void IncreaseClickValueBy100(int cost)
     {
         IncreaseClickValue(100, cost);

@@ -6,16 +6,16 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     //Timer Variables
-    private float time;
-    [SerializeField] private float maxTime;
     public Text timeText;
+    [SerializeField] private float maxTime;
+    private float time;
 
     //Click Value Variables
     public int clickValue;
 
     //Score Variables
-    public int score;
     public Text scoreText;
+    public int score;
 
     void Awake()
     {
@@ -46,6 +46,7 @@ public class GameManager : MonoBehaviour
         score += clickValue;
         UpdateScoreText();
     }
+
     public void UpdateScoreText()
     {
         scoreText.text = "Score: " + score.ToString();
