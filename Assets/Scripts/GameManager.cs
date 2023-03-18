@@ -44,6 +44,10 @@ public class GameManager : MonoBehaviour
     public void Score()
     {
         score += clickValue;
+        UpdateScoreText();
+    }
+    public void UpdateScoreText()
+    {
         scoreText.text = "Score: " + score.ToString();
     }
 }
