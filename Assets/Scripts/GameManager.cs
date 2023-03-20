@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     //Click Value Variables
     public Text valueText;
     public int clickValue;
+    private const string CLICK_VALUE = "Click Value";
 
     //Score Variables
     public Text scoreText;
@@ -21,6 +22,13 @@ public class GameManager : MonoBehaviour
     void Awake()
     {
         time = maxTime;
+
+        int savedClickValue = PlayerPrefs.GetInt(CLICK_VALUE);
+
+        if (savedClickValue <= clickValue) return;
+
+        clickValue = savedClickValue;
+        UpdateValueText();
     }
 
     void Update()
@@ -43,6 +51,13 @@ public class GameManager : MonoBehaviour
         timeText.text = "Time: " + intTime.ToString();
     }
 
+    //Tooling (Editor Only)
+    [ContextMenu("ResetClickValue")]
+    private void ResetClickValue()
+    {
+        PlayerPrefs.SetInt(CLICK_VALUE, 1);
+    }
+
     public void Score()
     {
         score += clickValue;
@@ -57,5 +72,10 @@ public class GameManager : MonoBehaviour
     public void UpdateValueText()
     {
         valueText.text = "+" + clickValue;
+    }
+
+    public void SaveClickValue()
+    {
+        PlayerPrefs.SetInt(CLICK_VALUE, clickValue);
     }
 }
